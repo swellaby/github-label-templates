@@ -1,11 +1,6 @@
 from invoke import task
 
 
-@task(aliases=["t"])
-def test(c):
-    c.run("pytest")
-
-
 def black(c, check):
     cmd = f"black . --line-length=79 {'--check' if check is True else ''}"
     return c.run(cmd)
@@ -21,11 +16,20 @@ def format_check(c):
     return black(c, True)
 
 
-@task(aliases=["ly"])
-def lint_yaml(c):
-    return c.run("yamllint .")
+@task(aliases=["t"])
+def test(c):
+    c.run("pytest")
 
 
 @task(aliases=["lp"])
 def lint_python(c):
     return c.run("pycodestyle .")
+
+
+@task(aliases=["ly"])
+def lint_yaml(c):
+    return c.run("yamllint .")
+
+
+@task(aliases=["l"], pre=[lint_python, lint_yaml])
+def lint(c): pass
