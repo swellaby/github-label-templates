@@ -1,7 +1,7 @@
 from yaml import load, FullLoader
 from os.path import abspath, dirname, join
 
-templates_root = abspath(join(dirname(dirname(__file__)), "templates", "yml"))
+templates_root = abspath(join(dirname(dirname(__file__)), "templates"))
 
 
 def get_path(root, filepath):
@@ -9,4 +9,6 @@ def get_path(root, filepath):
 
 
 def parse_template_yaml_file(filepath):
-    return load(open(get_path(templates_root, filepath), "r"), Loader=FullLoader)
+    return load(
+        open(get_path(templates_root, filepath), "r"), Loader=FullLoader
+    )
