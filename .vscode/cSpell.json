@@ -5,6 +5,7 @@
     "filterwarnings",
     "junit",
     "junitxml",
+    "letra",
     "pipefail",
     "pycodestyle",
     "pytest",
