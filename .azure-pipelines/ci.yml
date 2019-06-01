@@ -1,0 +1,19 @@
+trigger:
+- master
+
+pr: none
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+resources:
+  repositories:
+  - repository: templates
+    type: github
+    name: swellaby/azure-pipelines-templates
+    endpoint: swellaby
+
+steps:
+- template: 'templates/yml/python/combo/setup-pip.yml'
+- template: 'templates/yml/python/combo/run-pytest-ci.yml'
+- template: 'templates/yml/python/steps/pycodestyle.yml'
