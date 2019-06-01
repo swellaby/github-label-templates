@@ -18,7 +18,7 @@ def format_check(c):
 
 @task(aliases=["t"])
 def test(c):
-    c.run("pytest")
+    return c.run("pytest")
 
 
 @task(aliases=["lp"])
