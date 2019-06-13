@@ -15,10 +15,7 @@ resources:
 
 steps:
 - template: '../templates/yml/python/combo/setup-pip.yml'
-- template: '../templates/yml/python/steps/pycodestyle.yml'
+- template: '../templates/yml/python/steps/run-invoke.yml'
   parameters:
-    target: '.'
-    taskDisplayName: 'Lint python'
-
-- script: yamllint .
-  displayName: 'Lint templates'
+    tasksAndArguments: 'lint'
+    taskDisplayName: 'Lint'

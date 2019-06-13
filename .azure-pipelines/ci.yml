@@ -14,6 +14,4 @@ resources:
     endpoint: swellaby
 
 steps:
-- template: 'templates/yml/python/combo/setup-pip.yml'
-- template: 'templates/yml/python/combo/run-pytest-ci.yml'
-- template: 'templates/yml/python/steps/pycodestyle.yml'
+- template: 'templates/yml/python/combo/invoke-lint-format-test.yml'

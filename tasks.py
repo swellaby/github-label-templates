@@ -11,8 +11,8 @@ def format(c):
     return black(c, False)
 
 
-@task(aliases=["fc"])
-def format_check(c):
+@task(aliases=["cf", "fc"])
+def check_format(c):
     return black(c, True)
 
 
@@ -32,4 +32,5 @@ def lint_yaml(c):
 
 
 @task(aliases=["l"], pre=[lint_python, lint_yaml])
-def lint(c): pass
+def lint(c):
+    pass
