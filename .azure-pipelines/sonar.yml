@@ -4,9 +4,16 @@ pr:
 pool:
   vmImage: 'Ubuntu-16.04'
 
+resources:
+  repositories:
+  - repository: templates
+    type: github
+    name: swellaby/azure-pipelines-templates
+    endpoint: swellaby
+
 steps:
-- template: '../templates/yml/python/combo/setup-pip.yml'
-- template: '../templates/yml/python/combo/run-pytest-ci.yml'
+- template: templates/yml/python/combo/setup-pip.yml@templates
+- template: templates/yml/python/combo/run-pytest-ci.yml@templates
 
 - task: SonarSource.sonarcloud.14d9cde6-c1da-4d55-aa01-2965cd301255.SonarCloudPrepare@1
   displayName: 'Prepare analysis on SonarCloud'

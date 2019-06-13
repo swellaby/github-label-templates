@@ -14,8 +14,8 @@ resources:
     endpoint: swellaby
 
 steps:
-- template: '../templates/yml/python/combo/setup-pip.yml'
-- template: '../templates/yml/python/steps/run-invoke.yml'
+- template: templates/yml/python/combo/setup-pip.yml@templates
+- template: templates/yml/python/steps/run-invoke.yml@templates
   parameters:
     tasksAndArguments: 'lint'
     taskDisplayName: 'Lint'
