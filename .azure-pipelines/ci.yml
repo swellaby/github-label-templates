@@ -14,4 +14,4 @@ resources:
     endpoint: swellaby
 
 steps:
-- template: 'templates/yml/python/combo/invoke-lint-format-test.yml'
+- template: templates/yml/python/combo/invoke-lint-format-test.yml@templates

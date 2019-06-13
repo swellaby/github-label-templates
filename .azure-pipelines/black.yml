@@ -17,5 +17,5 @@ steps:
 - template: templates/yml/python/combo/setup-pip.yml@templates
 - template: templates/yml/python/steps/run-invoke.yml@templates
   parameters:
-    tasksAndArguments: 'lint'
-    taskDisplayName: 'Lint'
+    tasksAndArguments: 'check-format'
+    taskDisplayName: 'Run black check'
